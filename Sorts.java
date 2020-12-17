@@ -7,15 +7,9 @@ public class Sorts{
                 if( data[j] > data[j+1]){
                     int newNext = data[j];
                     data[j] = data[j+1];
-                    data[j+1] = newNext;
+                    data[j] = newNext;
                 }
             }
         }
-    }
-    private static boolean checkSort(int[]data){
-        for(int i = 1; i < data.length-1; i++){
-            if(data[i] < data[i-1] || data[i] > data[i+1]) return false;
-        }
-        return true;
     }
 }
