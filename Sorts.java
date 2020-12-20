@@ -19,15 +19,20 @@ public class Sorts{
     public static void selectionSort(int[] data){
         // use a nested loop. This time we're moving the smallest element to the leftmost spot.
         for (int i = 0; i <data.length-1; i++){
+            int minIndex = i;
             for(int j = i+1; j<data.length; j++){
-                int curMin = data[i];
-                //sort statement
-                if(data[j] < curMin){
-                    int newMin = data[j];
-                    data[j] = curMin;
-                    data[i] = newMin;
+                //find the index of the smallest element from j to arr length using a simple min search.
+                if(data[j] < data[minIndex]){
+                    minIndex = j;
                 }
+
             }
+            //after we find the smallest index we swap. don't swap if minIndex = i;
+            int newMin = data[minIndex];
+            data[minIndex] = data[i];
+            data[i] = newMin;
         }
     }
+
+
 }
