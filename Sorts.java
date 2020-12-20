@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Sorts{
     
     public static void bubbleSort(int[]data){
@@ -17,13 +19,13 @@ public class Sorts{
     public static void selectionSort(int[] data){
         // use a nested loop. This time we're moving the smallest element to the leftmost spot.
         for (int i = 0; i <data.length-1; i++){
-            int min = data[i];
-            for(int j = i+1; j<data.length-1; j++){
+            for(int j = i+1; j<data.length; j++){
+                int curMin = data[i];
                 //sort statement
-                if(data[j] < min){
+                if(data[j] < curMin){
                     int newMin = data[j];
-                    data[j] = min;
-                    min = newMin;
+                    data[j] = curMin;
+                    data[i] = newMin;
                 }
             }
         }
