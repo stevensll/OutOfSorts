@@ -42,8 +42,10 @@ public class Sorts{
             int current = data[i];
             int prev = i-1;
             while(prev >=0 && data[prev] > current){
-
+                data[prev+1] = data[prev];
+                prev--;
             }
+            data[prev + 1] = current;
         }
     }
 
