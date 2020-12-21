@@ -28,11 +28,23 @@ public class Sorts{
 
             }
             //after we find the smallest index we swap. don't swap if minIndex = i;
+            if (minIndex!=i){
             int newMin = data[minIndex];
             data[minIndex] = data[i];
             data[i] = newMin;
+            }
         }
     }
 
+    public static void insertionSort(int[] data){
+        //use a for loop to find an element smaller then the current element. then find the correct index to move this element to. use a while loop to shift everything
+        for (int i=1; i<data.length; i++) {
+            int current = data[i];
+            int prev = i-1;
+            while(prev >=0 && data[prev] > current){
+
+            }
+        }
+    }
 
 }
