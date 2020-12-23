@@ -18,7 +18,7 @@ public class StevenSortTester{
                 arr[j] = element.nextInt() % 1000; // set the element bound for the testing array
                 }
                 int[] clone = arr.clone(); // clone the current arr
-                Sorts.selectionSort(arr);
+                Sorts.insertionSort(arr);
                 Arrays.sort(clone);
                 //System.out.println(Arrays.toString(arr));
                 //System.out.println(Arrays.toString(clone));
@@ -28,7 +28,7 @@ public class StevenSortTester{
                 //REVERSE THE ARRAYS AND CHECK IF SORT STILL WORKS
                 reverse(clone);
                 reverse(arr);
-                Sorts.selectionSort(arr);
+                Sorts.insertionSort(arr);
                 Arrays.sort(clone);
                 if (!Arrays.equals(arr,clone)) {
                     throw new Error ("failure at reverse test " +  i + " . \n Expected: " + Arrays.toString(clone) + " \n Received: " + Arrays.toString(arr));
@@ -38,14 +38,15 @@ public class StevenSortTester{
             System.out.println(finalMessage);
         }
         //
-        int [] test = new int[] {64, 25, 12, 22, 11};
-        //System.out.println(Arrays.toString(test));
-        int j = 3;
-        while (j >= 0){
-            test[j+1] = test[j];
-            j--;
+        int [] randData = new int[10];
+        Random elementGen = new Random();
+        int randElement = elementGen.nextInt();
+        for(int i = 0; i < randData.length; i++){
+            randData[i] = randElement;
         }
-        System.out.println(Arrays.toString(test));
+        //System.out.println(Arrays.toString(test));
+        //Sorts.insertionSort(test);
+        System.out.println(Arrays.toString(randData));
 
     }
     public static void reverse(int[] arr){
